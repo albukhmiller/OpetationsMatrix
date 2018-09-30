@@ -2,8 +2,7 @@ package com.operations.matrix;
 
 abstract class BaseMatrix {
 
-    protected final String DETENMINATE_ZERO = "Определитель равен 0!";
-
+    protected final String DETENMINATE_ZERO = "Определитель матрицы равен 0!";
 
     protected double[][] matrixA;
     protected double[][] matrixB;
@@ -103,24 +102,6 @@ abstract class BaseMatrix {
         return strMatrix;
     }
 
-
-    @Override
-    public String toString() {
-
-        for (int i = 0; i < matrixA.length; i++) {
-            for (int j = 0; j <= matrixA[i].length; j++)
-                if (j < matrixA.length)
-                    System.out.print(String.format("%.2f", matrixA[i][j]) + " ");
-                else {
-                    System.out.print("|");
-                    for (int l = 0; l < matrixB.length; l++)
-                        System.out.print(String.format("%.2f", matrixB[i][l]) + " ");
-                }
-            System.out.println();
-        }
-        return "";
-    }
-
     protected boolean swapFirstElement(double[][] matA, double[][] matB) {
 
         for (int i = 1; i < matA.length; i++)
@@ -137,5 +118,24 @@ abstract class BaseMatrix {
                 return true;
             }
         return false;
+    }
+
+
+
+    @Override
+    public String toString() {
+
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j <= matrixA[i].length; j++)
+                if (j < matrixA.length)
+                    System.out.print(String.format("%.2f", matrixA[i][j]) + " ");
+                else {
+                    System.out.print("|");
+                    for (int l = 0; l < matrixB.length; l++)
+                        System.out.print(String.format("%.2f", matrixB[i][l]) + " ");
+                }
+            System.out.println();
+        }
+        return "";
     }
 }
