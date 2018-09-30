@@ -12,7 +12,6 @@ public class LUExpansion extends BaseMatrix implements MatrixOperation {
 
     @Override
     protected void straightPass(boolean isGauss) {
-
         if (!ValidatorMatrix.determinantCalculate(matrixA)) {
             System.out.println(DETENMINATE_ZERO);
             return;
@@ -28,13 +27,11 @@ public class LUExpansion extends BaseMatrix implements MatrixOperation {
         }
     }
 
-
     @Override
     public void calculate() {
         straightPass(false);
         System.out.println(toString());
     }
-
 
     private double[][] initSingleMatrix(int sizeMatrix) {
         matrixB = new double[sizeMatrix][];
