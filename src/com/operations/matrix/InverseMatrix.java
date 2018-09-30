@@ -24,19 +24,7 @@ public class InverseMatrix extends BaseMatrix implements MatrixOperation {
         }
     }
 
-    //    public InverseMatrix(double[][] matrix) {
-//        matrixB = new double[matrix.length][];
-//        matrixA = new double[matrix.length][];
-//        for (int i = 0; i < matrix.length; i++) {
-//            matrixA[i] = new double[matrix.length];
-//            matrixB[i] = new double[1];
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                if (j == matrix[i].length - 1)
-//                    matrixB[i][0] = matrix[i][j];
-//                else matrixA[i][j] = matrix[i][j];
-//            }
-//        }
-//    }
+
     @Override
     public void calculate() {
         System.out.println(toString());
@@ -48,7 +36,6 @@ public class InverseMatrix extends BaseMatrix implements MatrixOperation {
         straightPass(false);
         reversePass(false);
         multMatrix();
-        //   System.out.println(toString());
     }
 
     private double[][] initSingleMatrix(int sizeMatrix) {
@@ -72,7 +59,7 @@ public class InverseMatrix extends BaseMatrix implements MatrixOperation {
             }
         }
 
-        System.out.println("Inverse===================");
+        System.out.println("Inverse Matrix");
         for (int i = 0; i < res.length; i++) {
             System.out.println(String.format("%.2f", res[i]) + " ");
 

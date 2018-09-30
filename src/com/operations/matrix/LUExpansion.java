@@ -13,7 +13,6 @@ public class LUExpansion extends BaseMatrix implements MatrixOperation {
     @Override
     protected void straightPass(boolean isGauss) {
 
-
         if (!ValidatorMatrix.determinantCalculate(matrixA)) {
             System.out.println(DETENMINATE_ZERO);
             return;
@@ -30,7 +29,6 @@ public class LUExpansion extends BaseMatrix implements MatrixOperation {
     }
 
 
-    // метод гаусса = метод обртной матрицы
     @Override
     public void calculate() {
         straightPass(false);
