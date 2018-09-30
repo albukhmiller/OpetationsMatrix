@@ -2,7 +2,7 @@ package com.operations.matrix;
 
 abstract class BaseMatrix {
 
-    protected final String DETENMINATE_ZERO = "Определитель матрицы равен 0!";
+    protected final String DETENMINATE_ZERO = "Determinat is 0!";
 
     protected double[][] matrixA;
     protected double[][] matrixB;
@@ -63,14 +63,6 @@ abstract class BaseMatrix {
         }
     }
 
-    private boolean isZeroString(double[] strMatrix) {
-        double sum = 0;
-        for (int i = 0; i < strMatrix.length; i++) {
-            sum += strMatrix[i];
-        }
-        return (sum == 0) ? true : false;
-    }
-
     private void checkZeroString() {
 
         for (int i = 0; i < matrixA.length; i++) {
@@ -89,6 +81,16 @@ abstract class BaseMatrix {
             }
         }
     }
+
+    private boolean isZeroString(double[] strMatrix) {
+        double sum = 0;
+        for (int i = 0; i < strMatrix.length; i++) {
+            sum += strMatrix[i];
+        }
+        return (sum == 0) ? true : false;
+    }
+
+
 
     protected double[] dividerStringMatrix(double[] strMatrix, double diagonalElement) {
         for (int col = strMatrix.length - 1; col > -1; col--) {
