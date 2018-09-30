@@ -2,13 +2,14 @@ package com.operations.matrix;
 
 abstract class BaseMatrix {
 
-    protected final String DETENMINATE_ZERO = "Determinat is 0!";
+    protected final String DETENMINATE_ZERO = "Определитель равен 0!";
 
     protected double[][] matrixA;
     protected double[][] matrixB;
 
     protected void straightPass(boolean isGauss) {
         for (int i = 0; i < matrixA.length; i++) {
+
             dividerStringMatrix(matrixB[i], matrixA[i][i]);
             dividerStringMatrix(matrixA[i], matrixA[i][i]);
 
@@ -92,18 +93,6 @@ abstract class BaseMatrix {
 
 
 
-    protected double[] dividerStringMatrix(double[] strMatrix, double diagonalElement) {
-        for (int col = strMatrix.length - 1; col > -1; col--) {
-            if (diagonalElement == 0)
-                diagonalElement = 1;
-            strMatrix[col] = strMatrix[col] / diagonalElement;
-
-            if (strMatrix[col] == -0.0 || Double.isNaN(strMatrix[col]))
-                strMatrix[col] = 0;
-        }
-        return strMatrix;
-    }
-
     protected boolean swapFirstElement(double[][] matA, double[][] matB) {
 
         for (int i = 1; i < matA.length; i++)
@@ -121,6 +110,20 @@ abstract class BaseMatrix {
             }
         return false;
     }
+
+    protected double[] dividerStringMatrix(double[] strMatrix, double diagonalElement) {
+        for (int col = strMatrix.length - 1; col > -1; col--) {
+            if (diagonalElement == 0)
+                diagonalElement = 1;
+            strMatrix[col] = strMatrix[col] / diagonalElement;
+
+            if (strMatrix[col] == -0.0 || Double.isNaN(strMatrix[col]))
+                strMatrix[col] = 0;
+        }
+        return strMatrix;
+    }
+
+
 
 
 

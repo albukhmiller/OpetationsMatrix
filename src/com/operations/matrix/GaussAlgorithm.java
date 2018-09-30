@@ -6,7 +6,7 @@ import com.operations.matrix.interfaces.MatrixOperation;
 public class GaussAlgorithm extends BaseMatrix implements MatrixOperation {
 
     private final String MATRIX_CONSASTENCY = "Матрица несовместна!";
-
+    private final  String NO_SOLUTION = "Решений нет";
     public GaussAlgorithm(double[][] matrix) {
         matrixB = new double[matrix.length][];
         matrixA = new double[matrix.length][];
@@ -25,7 +25,7 @@ public class GaussAlgorithm extends BaseMatrix implements MatrixOperation {
     public void calculate() {
         if (matrixA[0][0] == 0)
             if (!swapFirstElement(matrixA, matrixB)) {
-                System.out.println("Решений нет!");
+                System.out.println(NO_SOLUTION);
                 return;
             }
         System.out.println(toString());
