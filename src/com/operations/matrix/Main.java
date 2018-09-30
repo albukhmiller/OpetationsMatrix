@@ -16,14 +16,8 @@ public class Main {
         System.out.println(gauss.toString());
         gauss.calculate();
 
-//        lu.calculate();
-//        System.out.println("INverse===============");
         System.out.println(gauss.toString());
-
-//        gauss.calculate();
-//        System.out.println("Gauss===============");
-//        System.out.println(gauss.toString());
-
+        
     }
 
 }
