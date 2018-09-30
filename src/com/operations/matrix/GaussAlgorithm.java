@@ -23,7 +23,6 @@ public class GaussAlgorithm extends BaseMatrix implements MatrixOperation {
 
     @Override
     public void calculate() {
-        System.out.println(toString());
         if (matrixA[0][0] == 0)
             if (!swapFirstElement(matrixA, matrixB)) {
                 System.out.println("Решений нет!");
